@@ -16,6 +16,7 @@ int main() {
 	// you have 2 options to store a string in memory
 	// 1. store raw bytes and a value to indicate the length
 	// 2. store raw bytes and a value to indicate the end
+	// C chose option 2 to optimize for space
 	printf("length of 'xc' is: %d\n", my_strlen(xc));
 	
 	char* s3 = "jovon";
@@ -44,6 +45,7 @@ int my_strlen(char* s) {
 int my_strcpy(char* src, char* dst) {
 	int src_len = my_strlen(src);
 	int dst_len = my_strlen(dst);
+	// dst is not large enough to hold src
 	if (dst_len < src_len) {
 		return -1;
 	}
